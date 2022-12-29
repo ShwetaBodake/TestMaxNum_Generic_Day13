@@ -8,33 +8,36 @@ namespace GenericTestMaximumNumber
     {
         public static void Main(string[] args)
         {
-           
+            bool check = true;
             RefactorCodeMaxNum obj1 = new RefactorCodeMaxNum();
 
-            int result=obj1.MaxNum<int>(21,33,44);
+            while(check)
+            {
+                Console.WriteLine("SelectOption 1)Find Integer max number  2)Find Float max number 3)Find maximum string");
 
-            Console.WriteLine(result);
+                int option = Convert.ToInt32(Console.ReadLine());
+
+                switch(option)
+                {
+                    case 1:
+                        int IntegerMaximum = obj1.MaxNum<int>(34, 22, 66);
+                        Console.WriteLine(IntegerMaximum);
+                        break;
+                    case 2:
+                        float FloatMaximum = obj1.MaxNum<float>(12.12f, 45.23f, 23.11f);
+                        break;
+                    case 3:
+                        string StringMaximum = obj1.MaxNum<string>("apple", "Banana", "Chickoo");
+                        Console.WriteLine(StringMaximum);
+                        break;
+                    default:
+                        check =!check;
+                        break;
 
 
-//----------------------------------------------------------------------------------------------//
-           //UsingGenericMaxNumber<int> obj = new UsingGenericMaxNumber<int>();
-            //obj.GenericMaxNumber(firstValue,secondvalue,thirdValue);
-
-
-            //    double firstValue = 23.45;
-            //    double secondvalue = 12.32;
-            //    double thirdValue = 23.44;
-
-
-            //MaximumFloatNumber.fMaximumNumber(firstValue, secondvalue, thirdValue);
-            //Console.WriteLine(MaximumFloatNumber.fMaximumNumber(firstValue, secondvalue, thirdValue));
-
-            //string firstValue = "shweta";
-            //string secondvalue = "Prithvi";
-            //string thirdValue = "Hrishikesh";
-            //MaximumString.Maximumstring(firstValue, secondvalue, thirdValue);
-            //    Console.WriteLine(MaximumString.Maximumstring(firstValue, secondvalue, thirdValue));
-
+                }
+            }
+          
         }
     } 
 }
